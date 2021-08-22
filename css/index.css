@@ -1,0 +1,173 @@
+/* 修改container的最大宽度为1280px */
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1280px;
+    }
+}
+body {
+    background-color: rgba(0, 0, 0, .1);
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+} 
+.container {
+    background-color: #fff;
+}
+
+/* header */
+.container .row header {
+    padding: 0;
+}
+header .logo {
+    /* width: 100%; */
+    background-color: #429ad9;
+}
+header .logo img {
+    display: block;
+    /* width: 100%; */
+    /* logo图片不需要缩放 */
+    max-width: 100%;
+    margin: 0 auto;
+}
+/* 进入超小屏 隐藏图片 */
+/* 在logo中准备一个盒子 平时隐藏 超小屏才出现 */
+.logo span {
+    display: block;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+}
+/* nav */
+nav {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+nav a  {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    /* padding-left: 3px; */
+    text-align: center;
+    font-size: 16px;
+    /* background-color: rgba(0, 0, 0, .1); */
+}
+nav a::before {
+    vertical-align: middle;
+    padding-left: 10px;
+}
+nav a i{
+    padding-right: 8px;
+}
+nav a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+
+/* news */
+article .news li {   
+    float: left;
+    width: 25%;
+    height: 128px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+article .news li:nth-child(1) {
+    width: 50%;
+    height: 266px;
+    /* background-color: #666; */
+}
+/* 当进入小屏和超小屏时 让nav里的li全都浮动起来 */
+@media screen and (max-width:991px) {
+    nav li {
+        float: left;
+        width: 20%;
+    }
+    article {
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:767px) {
+    nav a {
+        font-size: 14px;
+    }
+    /* 进入超小屏 第一个li为100% 其余各50% */
+    article .news li:nth-child(1) {
+        width: 100%;
+    }
+    article .news li {
+        width: 50%;
+    }
+}
+article .news li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+article .news li a img {
+    width: 100%;
+    height: 100%;
+}
+/* article .news li:nth-child(1) a p {
+    line-height: 41px;
+} */
+article .news li a p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    background: rgba(0, 0, 0, .4);
+    font-size: 16px;
+    color: #fff;    
+    padding: 0 10px;  
+    margin-bottom: 0;
+    line-height: 41px;
+}
+/* publish */
+.publish {
+    border-top: 1px solid #666;
+    padding: 0 10px;
+}
+.publish .row {
+    border-bottom: 1px solid #666;
+    padding-right: 15px;
+}
+.publish .pic {
+    padding: 0;
+}
+.publish .pic img {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    /* padding: 0; */
+}
+.banner img {
+    width: 100%;
+    /* height: 100%; */
+}
+.hot {
+    display: block;
+    margin-top: 20px;
+    border: 1px solid #666;
+    padding: 0 20px 20px;
+}
+.hot span {
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+.hot p {
+    font-size: 12px;
+}
